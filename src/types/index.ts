@@ -6,4 +6,5 @@ export type TRecipe = {
     ingredients: string;
     tag: string;
     cookingTime: string;
+    data: string;
 }       

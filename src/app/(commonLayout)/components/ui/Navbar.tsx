@@ -58,8 +58,8 @@ const CustomerNavbar = () => {
                 </div>
                 <NavbarContent justify="end">
                 <NavbarItem>
-                        <Button as={Link} color="warning" href="/dashboard" variant="flat">
-                           Dashboard
+                        <Button as={Link} color="warning" href="/dashboard" className="hidden lg:block" variant="flat">
+                       <span className="mt-3">Dashboard</span>
                         </Button>
                     </NavbarItem>
                     <NavbarItem className="hidden lg:flex">

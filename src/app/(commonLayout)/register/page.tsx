@@ -1,7 +1,6 @@
 "use client"
 import { useCreateUserMutation } from "@/redux/api/baseApi";
 import { Button, Input } from "@nextui-org/react";
-import { div } from "framer-motion/client";
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useRouter } from 'next/navigation'
@@ -13,10 +12,10 @@ interface IFormInput {
     profileImage: string;
     // role: string;
 }
-const register = () => {
+const Register = () => {
     const { register, handleSubmit } = useForm<IFormInput>();
     const [createUser] = useCreateUserMutation()
-
+    const router = useRouter()
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
         const userData = {
             email: data.email,
@@ -28,7 +27,7 @@ const register = () => {
         const res = await createUser(userData)
         console.log(' create user response', res)
         if(res.data){
-            const router = useRouter()
+            router.push('/login')
         }
  
     };
@@ -61,4 +60,4 @@ const register = () => {
     );
 };
 
-export default register;
+export default Register;
