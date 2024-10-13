@@ -5,14 +5,12 @@ import RecipeDetails from '../../components/ui/RecipeDetails';
 
 type TRecipeId = {
   params: {
-    recipeId: string
+    id: string
   }
 }
 
 const recipeDetails = async ({ params }: { params: TRecipeId }) => {
- console.log(params);
- 
-  const res = await fetch(`http://localhost:5000/api/recipe/${params.recipeId}`, {
+  const res = await fetch(`http://localhost:5000/api/recipe/${params.id}`, {
     cache: 'no-store'
   })
   const recipeData = await res.json()
